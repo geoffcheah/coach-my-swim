@@ -1,0 +1,12 @@
+
+<div class="container">
+
+  <h1>Ask <%= @lesson.user.email %> for some feedback </h1>
+  <p>You can provide <%= @lesson.user.email %> with a description of what you are looking to get out of the fedback. <%= @lesson.user.email %> will be notfied of your request when you click send.</p>
+  <%= simple_form_for [@lesson, @booking] do |f| %>
+    <%= f.input :description %>
+    <%= f.submit "Get some feedback", class: "btn" %>
+  <% end %>
+
+</div>
+

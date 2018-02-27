@@ -22,7 +22,11 @@
           </div>
         </div>
         <div class="lesson-nav-container">
-          <div class="btn btn-primary">Book this coach</div>
+          <%= link_to new_lesson_booking_path(@lesson) do %>
+            <div class="btn btn-primary">
+              Book this coach
+            </div>
+            <% end %>
           <div class="btn btn-primary">Leave a review</div>
         </div>
       </div>
