@@ -8,9 +8,14 @@
   justify-content: center;
   color: white;
 
-  .banner-content h1 {
-    margin-bottom: 50px;
+  .banner-content h1, h2 {
     opacity: 0.7;
+  }
+  .banner-content h1 {
+    font-size: 80px;
+  }
+  .banner-content h2 {
+    font-size: 30px;
   }
   .btn.btn-success {
     border-radius: 5px;
