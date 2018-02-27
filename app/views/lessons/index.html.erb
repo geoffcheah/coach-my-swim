@@ -15,7 +15,7 @@
               </p>
               <p><%= lesson.speciality %> | <%= lesson.ability %> | £<%= lesson.price %></p>
             </div>
-            <div class="btn-position btn btn-primary">Profile</div>
+            <div class="btn-position btn btn-primary"><%= link_to "Profile", lesson_path(lesson) %></div>
           </div>
         </div>
       </div>
