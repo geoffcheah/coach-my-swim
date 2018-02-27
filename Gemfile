@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
 
+gem 'faker', '~> 1.6', '>= 1.6.6'
 gem "pundit"
 gem 'devise'
 gem 'figaro'
