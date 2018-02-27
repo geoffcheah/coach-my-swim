@@ -1,0 +1,21 @@
+<div class="navbar-swim">
+  <%= link_to "CoachMySwim", root_path, class: "navbar-swim-link" %>
+<!--     The link to become a coach needs to be modified when this user journey is finalised and the use case of become a coach -->
+  <% if user_signed_in? %>
+    <div class="navbar-swim-right">
+      <%= link_to "Become a coach", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
+      <%= link_to "Log-out", destroy_user_session_path, class: "navbar-swim-link navbar-swim-item"%>
+<!--   The user name needs to be update to an avatar and the root to their adiministion page -->
+      <%= link_to root_path do %>
+        <%= image_tag "test_profile_page", alt: "Profile picture", class: "avatar" %>
+      <% end %>
+    </div>
+<!--     <%= link_to current_user.email, root_path, class: "navbar-swim-link navbar-swim-item" %> -->
+  <% else %>
+    <div class="navbar-swim-right">
+      <%= link_to "Become a coach", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
+      <%= link_to "Sign-up", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
+      <%= link_to "Log-in", new_user_session_path, class: "navbar-swim-link navbar-swim-item" %>
+    </div>
+  <% end %>
+</div>
