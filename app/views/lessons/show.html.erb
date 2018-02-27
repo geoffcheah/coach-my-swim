@@ -24,6 +24,12 @@
         <div class="lesson-nav-container">
           <div class="btn btn-primary">Book this coach</div>
           <div class="btn btn-primary">Leave a review</div>
+          <% if @lesson.user == current_user %>
+            <%= link_to edit_lesson_path do %>
+              <div class="btn btn-primary">Edit Your Info</div>
+            <% end %>
+          <% end %>
+
         </div>
       </div>
     </div>
