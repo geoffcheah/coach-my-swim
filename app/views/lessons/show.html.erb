@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="lesson-card">
+        <%= image_tag 'geoff.jpeg', class: "avatar-large" %>
+        <div class="lesson-info-container">
+          <h1><%= @lesson.user.email %></h1>
+          <h3>Average Rating: </h3>
+          <div class="lesson-info-attributes">
+            <div class="box-price">
+              <h3>Price</h3>
+              <p>$<%=@lesson.price %>/hr</p>
+            </div>
+            <div class="box-ability">
+              <h3>Coach Ability</h3>
+              <p><%= @lesson.ability %></p>
+            </div>
+            <div class="box-speciality">
+              <h3>Strokes Speciality</h3>
+              <p><%= @lesson.speciality %></p>
+            </div>
+          </div>
+        </div>
+        <div class="lesson-nav-container">
+          <div class="btn btn-primary">Book this coach</div>
+          <div class="btn btn-primary">Leave a review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h3>About Me</h3>
+    <p><%= @lesson.bio %></p>
+  </div>
+</div>
