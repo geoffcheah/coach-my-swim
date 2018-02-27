@@ -37,6 +37,10 @@
   position: absolute;
   bottom: 45px;
   right: 10px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .lesson-card {
@@ -70,4 +74,4 @@
       margin: 20px 0px;
     }
   }
-
+}
