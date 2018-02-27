@@ -32,3 +32,37 @@
     font-size: 15px;
   }
 }
+
+.lesson-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .lesson-info-container {
+    margin: 0px 20px;
+  }
+  .lesson-info-attributes {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .box-price {
+      padding: 10px;
+      text-align: center;
+    }
+    .box-ability {
+      padding: 10px;
+      text-align: center;
+    }
+    .box-speciality {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+  .lesson-nav-container {
+    margin: 0px 20px;
+    .btn {
+      margin: 20px 0px;
+    }
+  }
+
+}

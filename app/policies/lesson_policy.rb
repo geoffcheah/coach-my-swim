@@ -4,4 +4,13 @@ class LessonPolicy < ApplicationPolicy
       scope
     end
   end
+
+
+
+def show
+  return true
+end
+
+
+
 end
