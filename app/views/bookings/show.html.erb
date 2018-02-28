@@ -1,14 +1,23 @@
 <div class="container">
-  <h1><%= @booking.user.email %>'s coaching session</h1>
-  <h4>Swimmer's info, goals and requests for this coaching session</h4>
-  <p><%= @booking.description %></p>
-  <%= cl_video_tag (@booking.video.file.public_id), size:"600x800", controls:true, autoplay: true %>
-  <h4>Coaching feedback from <%= @booking.lesson.user.email %></h4>
-  <% if @booking.feedback.nil? %>
-    <p>Awaiting feedback from <%= @booking.lesson.user.email %></p>
+  <h1><%= @booking.user.first_name %>'s coaching session</h1>
+  <% if policy(@booking).edit? %>
+    <h4>Student's info, goals and feedback requests for this coaching session</h4>
   <% else %>
-    <p><%= @booking.feedback %></p>
+    <h4>My info, goals and feedback requests for this coaching session</h4>
   <% end %>
+  <div class="text-box">
+    <p><%= @booking.description %></p>
+  </div>
+  <h4>Uploaded video for analysis</h4>
+  <%= cl_video_tag (@booking.video.file.public_id), size:"700x400", controls:true, autoplay: true %>
+  <h4>Coaching feedback from <%= @booking.lesson.user.first_name %> <%= @booking.lesson.user.last_name %></h4>
+  <div class="text-box">
+    <% if @booking.feedback.nil? %>
+      <p><em>Awaiting feedback from <%= @booking.lesson.user.first_name %></em></p>
+    <% else %>
+      <p><%= @booking.feedback %></p>
+    <% end %>
+  </div>
   <% if policy(@booking).edit? %>
     <%= link_to edit_booking_path(@booking) do %>
       <div class="btn btn-primary">Add Feedback</div>
