@@ -1,6 +1,6 @@
 <div class="container">
   <% if policy(@user).show? %>
-
+    <%= image_tag "geoff.jpeg", alt: "default profile picture", class: "avatar-small" %>
     <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
 
     <% if current_user == @user %>
