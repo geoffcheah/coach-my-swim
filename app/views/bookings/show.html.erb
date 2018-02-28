@@ -9,6 +9,8 @@
     <p><%= @booking.feedback %></p>
   <% end %>
   <% if policy(@booking).edit? %>
-    <div class="btn btn-primary"><%= link_to "Add feedback", edit_booking_path(@booking) %></div>
+    <%= link_to edit_booking_path(@booking) do %>
+      <div class="btn btn-primary">Add Feedback</div>
+    <% end %>
   <% end %>
 </div>
