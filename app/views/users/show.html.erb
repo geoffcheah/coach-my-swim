@@ -6,4 +6,5 @@
 <% current_user.bookings.each do |booking| %>
   <h2><%= booking.lesson.user.email %></h2>
   <p> <%= booking.description %></p>
+  <%= cl_video_tag (booking.video.to_s), size:"600x800", controls:true, autoplay: true %>
 <% end %>

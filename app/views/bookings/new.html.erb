@@ -5,6 +5,7 @@
   <p>You can provide <%= @lesson.user.email %> with a description of what you are looking to get out of the fedback. <%= @lesson.user.email %> will be notfied of your request when you click send.</p>
   <%= simple_form_for [@lesson, @booking] do |f| %>
     <%= f.input :description %>
+    <%= f.file_field :video, class: "form-control" %>
     <%= f.submit "Get some feedback", class: "btn" %>
   <% end %>
 

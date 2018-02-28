@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:description)
+    params.require(:booking).permit(:description, :video)
   end
 
 end
