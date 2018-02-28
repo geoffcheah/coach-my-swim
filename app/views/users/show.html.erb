@@ -1,1 +1,9 @@
+
 <h1>Hello <%= @user.email %></h1>
+
+<h2>Current Bookings</h2>
+
+<% current_user.bookings.each do |booking| %>
+  <h2><%= booking.lesson.user.email %></h2>
+  <p> <%= booking.description %></p>
+<% end %>
