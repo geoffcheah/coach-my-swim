@@ -1,0 +1,15 @@
+
+.booking-container {
+  display: flex;
+  align-items : center;
+  justify-items: space-between;
+  border: 1px solid $light-green;
+}
+
+.booking-message {
+  flex: 1 0 auto;
+}
+
+.booking-status {
+  width: 100px;
+}
