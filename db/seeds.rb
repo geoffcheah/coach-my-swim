@@ -13,7 +13,7 @@ User.destroy_all
 puts "Seeding Users and Lessons"
 
 5.times do
-  user = User.create(email: Faker::Internet.email, password: "123456")
+  user = User.create(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name )
   lesson = Lesson.create(user: user,
     price: 10,
     bio: "Almost drowned when I was little",
@@ -24,7 +24,7 @@ end
 puts "creating swimmers"
 
 5.times do
-  User.create(email: Faker::Internet.email, password: "123456")
+  User.create(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
 end
 
 puts "finished"

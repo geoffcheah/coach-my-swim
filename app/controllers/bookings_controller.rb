@@ -14,10 +14,30 @@ class BookingsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if @booking.update(booking_params)
+      redirect_to booking_path(@booking)
+    else
+      render "edit"
+    end
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:description, :video)
+    params.require(:booking).permit(:description, :feedback, :video)
   end
 
 end
