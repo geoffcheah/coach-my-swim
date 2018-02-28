@@ -49,9 +49,9 @@
   justify-content: space-between;
   .lesson-info-container {
     margin: 0px 20px;
+    flex: 1 0 auto;
   }
   .lesson-info-attributes {
-    flex-grow: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,7 +69,8 @@
     }
   }
   .lesson-nav-container {
-    margin: 0px 20px;
+    flex: 0 1 160px;
+    // margin: 0px 20px;
     .btn {
       margin: 20px 0px;
     }
