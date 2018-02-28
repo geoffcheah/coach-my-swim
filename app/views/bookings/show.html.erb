@@ -2,6 +2,7 @@
   <h1><%= @booking.user.email %>'s coaching session</h1>
   <h4>Swimmer's info, goals and requests for this coaching session</h4>
   <p><%= @booking.description %></p>
+  <%= cl_video_tag (@booking.video.file.public_id), size:"600x800", controls:true, autoplay: true %>
   <h4>Coaching feedback from <%= @booking.lesson.user.email %></h4>
   <% if @booking.feedback.nil? %>
     <p>Awaiting feedback from <%= @booking.lesson.user.email %></p>
