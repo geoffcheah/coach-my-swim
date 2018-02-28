@@ -70,7 +70,7 @@
         <%= link_to lesson_path(lesson) do  %>
           <div class="col-xs-12 col-sm-4 col-md-3">
             <div class="card list-inline">
-              <div class="card-user-img" style="background-image: url(<%= cl_image_path lesson.user.photo %>) ;">
+              <div class="card-user-img" style="background-image: url('<%= cl_image_path lesson.user.photo %>') ;">
                 <div class="card-user-name"><h2><%= lesson.user.first_name %> <%= lesson.user.last_name %></h2>
                 </div>
                 <div class="card-user-description">
