@@ -2,23 +2,26 @@
   <h1>Suggested Coaches</h1>
   <div class="row">
     <% @lessons.each do |lesson| %>
-      <div class="col-xs-12 col-sm-4 col-md-3">
-        <div class="card">
-          <div class="card-user-img" style="background-image: url('/assets/geoff.jpeg');">
+      <%= link_to lesson_path(lesson) do  %>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <div class="card">
+            <div class="card-user-img" style="background-image: url(<% cl_image_path lesson.user.photo %>);">
             <!-- Geoff Cheah is a placeholder as seed records only have emails (no names) -->
-            <div class="card-user-name"><h2>Geoff Cheah<%= lesson.user.first_name %> <%= lesson.user.last_name %></h2>
-            </div>
-            <div class="card-user-description">
+              <div class="card-user-name"><h2><%= lesson.user.first_name %> <%= lesson.user.last_name %></h2>
+              </div>
+              <div class="card-user-description">
               <!-- Placeholder - we can add some logic for star rating once/if have reviews -->
-              <p>
+                <p>
                 <% 4.times do %><i class="glyphicon glyphicon-star"></i><% end %>
-              </p>
-              <p><%= lesson.speciality %> | <%= lesson.ability %> | £<%= lesson.price %></p>
-            </div>
-            <div class="btn-position btn btn-primary"><%= link_to "Profile", lesson_path(lesson) %></div>
+                </p>
+                <p>
+                  <%= lesson.speciality %> | <%= lesson.ability %> | £<%= lesson.price %>
+                  </p>
+              </div>
           </div>
         </div>
       </div>
     <% end %>
+  <% end %>
   </div>
 </div>
