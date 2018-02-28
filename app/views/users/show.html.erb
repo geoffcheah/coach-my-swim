@@ -1,7 +1,13 @@
 <div class="container">
   <% if policy(@user).show? %>
-    <%= image_tag "geoff.jpeg", alt: "default profile picture", class: "avatar-small" %>
+  <div class="profile-header">
+    <% if @user.photo == nil %>
+      <%= cl_image_tag("profile_default", class: 'avatar-small') %>
+    <% else %>
+      <%= cl_image_tag(@user.photo, class: 'avatar-small') %>
+    <% end %>
     <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
+  </div>
 
     <% if current_user == @user %>
 
@@ -17,6 +23,7 @@
       <% else %>
         <% @user.bookings.each do |booking| %>
 
+        <%= link_to booking_path(booking.id) do %>
           <div class="booking-container">
             <%= image_tag 'geoff.jpeg', class: "avatar-small" %>
             <div class="booking-message">
@@ -27,14 +34,11 @@
               <% if booking.feedback == nil %>
                 <p>Pending</p>
               <% else %>
-                <%= link_to booking_path(booking.id) do %>
-                  <div class="btn btn-primary">
-                    View feeedback
-                  </div>
-                <% end %>
+                Feedback ready
               <% end %>
-              </div>
+            </div>
            </div>
+          <% end %>
         <% end %>
       <% end %>
 
