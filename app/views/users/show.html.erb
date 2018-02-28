@@ -1,15 +1,46 @@
-<% if policy(@user).show? %>
+<div class="container">
+  <% if policy(@user).show? %>
+    <%= image_tag "geoff.jpeg", alt: "default profile picture", class: "avatar-small" %>
+    <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
 
-  <h1>Hello <%= @user.email %></h1>
+    <% if current_user == @user %>
 
-  <% if current_user == @user %>
-    <h2>Current Bookings</h2>
+      <h2>Current Bookings</h2>
 
-    <% @user.bookings.each do |booking| %>
-      <h2><%= booking.lesson.user.email %></h2>
-      <p> <%= booking.description %></p>
+      <% if @user.bookings == [] %>
+        <p>You currently have no bookings!</p>
+        <%= link_to lessons_path do %>
+          <div class="btn btn-primary">
+          Browse all coaches
+          </div>
+        <% end %>
+      <% else %>
+        <% @user.bookings.each do |booking| %>
+
+          <div class="booking-container">
+            <%= image_tag 'geoff.jpeg', class: "avatar-small" %>
+            <div class="booking-message">
+              <h2><%= booking.lesson.user.email %></h2>
+              <p> <%= booking.description %></p>
+            </div>
+            <div class="booking-status">
+              <% if booking.feedback == nil %>
+                <p>Pending</p>
+              <% else %>
+                <%= link_to booking_path(booking.id) do %>
+                  <div class="btn btn-primary">
+                    View feeedback
+                  </div>
+                <% end %>
+              <% end %>
+              </div>
+           </div>
+        <% end %>
+      <% end %>
+
+    <% else %>
+      <h1>You do not have access to their bookings</h1>
     <% end %>
-  <% else %>
-    <h1>You do not have access to their bookings</h1>
+
   <% end %>
-<% end %>
+</div>

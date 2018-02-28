@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   # TO DO: VALIDATIONS
   has_many :bookings
+  validates :email, uniqueness: true, presence: true
 end
