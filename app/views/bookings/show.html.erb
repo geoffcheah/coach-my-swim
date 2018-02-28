@@ -1,0 +1,14 @@
+<div class="container">
+  <h1><%= @booking.user.email %>'s coaching session</h1>
+  <h4>Swimmer's info, goals and requests for this coaching session</h4>
+  <p><%= @booking.description %></p>
+  <h4>Coaching feedback from <%= @booking.lesson.user.email %></h4>
+  <% if @booking.feedback.nil? %>
+    <p>Awaiting feedback from <%= @booking.lesson.user.email %></p>
+  <% else %>
+    <p><%= @booking.feedback %></p>
+  <% end %>
+  <% if policy(@booking).edit? %>
+    <div class="btn btn-primary"><%= link_to "Add feedback", edit_booking_path(@booking) %></div>
+  <% end %>
+</div>

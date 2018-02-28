@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :lessons do
     resources :bookings, only: [:new, :create]
   end
+  resources :bookings, only: [:show, :edit, :update]
 end
