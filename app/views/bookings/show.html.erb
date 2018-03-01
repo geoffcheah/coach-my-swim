@@ -16,6 +16,9 @@
       <p><em>Awaiting feedback from <%= @booking.lesson.user.first_name %></em></p>
     <% else %>
       <p><%= @booking.feedback %></p>
+      <%= link_to new_lesson_review_path(@booking.lesson) do %>
+        <div class="btn btn-primary">Leave a review</div>
+      <% end %>
     <% end %>
   </div>
   <% if policy(@booking).edit? %>
