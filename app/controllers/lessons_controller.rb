@@ -1,6 +1,17 @@
 class LessonsController < ApplicationController
   def index
-    @lessons = policy_scope(Lesson).order(created_at: :desc)
+    if params[:query].present?
+      sql_query = "
+      lessons.ability @@ :query \
+      OR lessons.speciality @@ :query \
+      OR users.first_name @@ :query \
+      OR users.last_name @@ :query \
+      "
+      search = Lesson.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      @lessons = policy_scope(search).order(created_at: :desc)
+    else
+      @lessons = policy_scope(Lesson).order(created_at: :desc)
+    end
   end
 
   def new

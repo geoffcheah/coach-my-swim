@@ -1,5 +1,14 @@
 <div class="container">
-  <h1>Suggested Coaches</h1>
+  <h1>Search Coaches</h1>
+  <div class="search-form">
+    <%= form_tag lessons_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a coach"
+      %>
+    <% end %>
+  </div>
   <div class="row">
     <% @lessons.each do |lesson| %>
       <%= link_to lesson_path(lesson) do  %>
