@@ -1,12 +1,11 @@
 <div class="container">
   <% if policy(@user).show? %>
     <div class="profile-header">
-      <% if @user.photo == nil %>
-        <%= cl_image_tag("profile_default", class: 'avatar-small') %>
-      <% else %>
-        <%= cl_image_tag(@user.photo, class: 'avatar-small') %>
-      <% end %>
+      <%= cl_image_tag(@user.photo.url(:bright_face), class: 'avatar-small') %>
       <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
+      <%= link_to edit_user_path(@user) do %>
+        <div class="btn btn-primary">Edit Profile</div>
+      <% end %>
     </div>
 
     <% if current_user == @user %>

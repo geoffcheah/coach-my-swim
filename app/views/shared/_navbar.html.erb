@@ -9,7 +9,7 @@
       <%= link_to "Log-out", destroy_user_session_path, method: :delete, class: "navbar-swim-link navbar-swim-item"%>
 <!--   The user name needs to be update to an avatar and the root to their adiministion page -->
       <%= link_to user_path(current_user) do %>
-         <%= cl_image_tag current_user.photo, class: "avatar" %>
+         <%= cl_image_tag current_user.photo.url(:bright_face), class: "avatar" %>
       <% end %>
     </div>
 <!--     <%= link_to current_user.email, root_path, class: "navbar-swim-link navbar-swim-item" %> -->

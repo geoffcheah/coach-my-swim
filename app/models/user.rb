@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :bookings
   has_one :lesson
   validates :email, uniqueness: true, presence: true
+  mount_uploader :photo, PhotoUploader
 end
