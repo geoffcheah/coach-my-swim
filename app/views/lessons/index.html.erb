@@ -7,20 +7,19 @@
           <div class="card">
             <div class="card-user-img" style="background-image: url(<%= cl_image_path lesson.user.photo %>)">
             </div>
-              <div class="card-user-name"><h2><%= lesson.user.first_name %> <%= lesson.user.last_name %></h2>
-              </div>
-              <div class="card-user-description">
-                <p>
-                <% 4.times do %><i class="glyphicon glyphicon-star"></i><% end %>
-                </p>
-                <p>
-                  <%= lesson.speciality %> | <%= lesson.ability %> | £<%= lesson.price %>
-                  </p>
-              </div>
+            <div class="card-user-name"><h2><%= lesson.user.first_name %> <%= lesson.user.last_name %></h2>
+            </div>
+            <div class="card-user-description">
+              <p>
+              <% 4.times do %><i class="glyphicon glyphicon-star"></i><% end %>
+              </p>
+              <p>
+                <%= lesson.speciality %> | <%= lesson.ability %> | £<%= lesson.price %>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
 </div>
