@@ -11,11 +11,10 @@ class LessonsController < ApplicationController
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.user = current_user
+    authorize @lesson
     if @lesson.save
-      authorize @lesson
       redirect_to lesson_path(@lesson)
     else
-      authorize @lesson
       render :new
     end
   end
