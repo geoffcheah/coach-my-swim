@@ -26,5 +26,7 @@
     <% end %>
   <% else %>
     <p>Top of your game? Become a coach and get paid to give advice</p>
-    <div class="btn btn-primary">Become a coach</div>
+    <%= link_to new_lesson_path do %>
+      <div class="btn btn-primary">Become a coach</div>
+    <% end %>
   <% end %>

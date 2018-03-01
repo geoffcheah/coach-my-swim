@@ -10,4 +10,8 @@ class UserPolicy < ApplicationPolicy
     coach = user_bookings.any? { |booking|  Lesson.find(booking.lesson_id).user_id = user }
     record == user || coach
   end
+
+  def update?
+    record == user
+  end
 end
