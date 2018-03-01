@@ -1,0 +1,30 @@
+<h2>Your feedback requests</h2>
+  <% if current_user.coach == true %>
+    <% if @user.lesson.bookings == [] %>
+      <p>You currently have no feedback requests!</p>
+    <% else %>
+      <% @user.lesson.bookings.each do |booking| %>
+
+        <%= link_to booking_path(booking.id) do %>
+          <div class="booking-container">
+            <%= cl_image_tag(booking.user.photo, class: 'avatar-small') %>
+            <div class="booking-message">
+              <h2><%= booking.user.first_name %></h2>
+              <p>Their request:</p>
+              <p> <%= booking.description %></p>
+            </div>
+            <div class="booking-status">
+              <% if booking.feedback == nil %>
+                <p>Leave feedack</p>
+              <% else %>
+                Feedback sent
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p>Top of your game? Become a coach and get paid to give advice</p>
+    <div class="btn btn-primary">Become a coach</div>
+  <% end %>

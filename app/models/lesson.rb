@@ -1,5 +1,7 @@
 class Lesson < ApplicationRecord
   belongs_to :user
+  belongs_to :lesson
+  has_many :bookings
   validates :price, presence: true, numericality: { only_integer: true }
   validates :bio, presence: true
   validates :speciality, presence: true, inclusion: { in: ["Freestyle", "Breastroke", "Backstroke", "Butterfly"]}
