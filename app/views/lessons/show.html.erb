@@ -1,6 +1,6 @@
 <div class="container">
   <div class="lesson-card">
-    <%= cl_image_tag @lesson.user.photo, class: "avatar-large" %>
+    <%= cl_image_tag @lesson.user.photo.url(:bright_face), class: "avatar-large" %>
     <div class="lesson-info-container">
       <h1><%= @lesson.user.first_name %> <%= @lesson.user.last_name %></h1>
       <h3>Average Rating: </h3>
