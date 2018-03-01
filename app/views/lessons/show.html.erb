@@ -25,7 +25,9 @@
           Book this coach
         </div>
       <% end %>
-      <div class="btn btn-primary">Leave a review</div>
+      <%= link_to new_lesson_review_path(@lesson) do %>
+        <div class="btn btn-primary">Leave a review</div>
+      <% end %>
       <% if @lesson.user == current_user %>
         <%= link_to edit_lesson_path do %>
           <div class="btn btn-primary">Edit Your Info</div>
@@ -37,5 +39,15 @@
     <h3>About Me</h3>
     <p><%= @lesson.bio %></p>
   </div>
-
+  <hr>
+  <div class="review-content-container">
+    <h3><%= @lesson.user.first_name %>'s Reviews</h3>
+    <% @reviews.each do |review| %>
+      <div class="review-box">
+        <h5>From x (TO DO- maybe need to add attribute (user/current_user) to Review model</h5>
+        <p><%= review.content %></p>
+        <p><%= review.rating %></p>
+      </div>
+    <% end %>
+  </div>
 </div>

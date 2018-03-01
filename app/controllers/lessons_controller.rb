@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    @reviews = Review.where(lesson_id: @lesson)
     authorize @lesson
   end
 
