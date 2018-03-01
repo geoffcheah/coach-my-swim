@@ -7,7 +7,7 @@ class LessonsController < ApplicationController
       OR users.first_name @@ :query \
       OR users.last_name @@ :query \
       "
-      search = Lesson.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      search = Lesson.search_by_name_and_lesson_ability("%#{params[:query]}%")
       @lessons = policy_scope(search).order(created_at: :desc)
     else
       @lessons = policy_scope(Lesson).order(created_at: :desc)

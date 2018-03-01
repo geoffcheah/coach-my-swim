@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
 
+gem 'pg_search'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem 'faker', '~> 1.6', '>= 1.6.6'
