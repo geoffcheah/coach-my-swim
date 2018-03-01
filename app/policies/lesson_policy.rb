@@ -5,16 +5,16 @@ class LessonPolicy < ApplicationPolicy
     end
   end
 
-
+  def create?
+    true
+  end
 
   def show?
-    return true
+    true
   end
 
   def update?
     record.user == user
   end
-
-
 
 end
