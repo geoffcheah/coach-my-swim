@@ -13,6 +13,8 @@ class LessonsController < ApplicationController
     @lesson.user = current_user
     authorize @lesson
     if @lesson.save
+      current_user.coach = true
+      current_user.save
       redirect_to lesson_path(@lesson)
     else
       render :new
