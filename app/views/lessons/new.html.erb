@@ -1,10 +1,16 @@
-<div class="container">
-  <h1>Create a lesson</h1>
-  <%= simple_form_for(@lesson) do |f| %>
-    <%= f.input :ability %>
-    <%= f.input :speciality %>
-    <%= f.input :price %>
-    <%= f.input :bio %>
-    <%= f.submit %>
-  <% end %>
+<div class="form-wrapper">
+  <div class="container">
+    <div class="col-sm-offset-2 col-sm-8 col-sm-offset-2">
+      <div class="form-container">
+        <h1 class="text-center">Create a lesson</h1>
+        <%= simple_form_for(@lesson) do |f| %>
+          <%= f.input :ability, label: 'Your coaching ability',collection: ["Level 1", "Level 2", "Level 3"], prompt: "Select your coaching level" %>
+          <%= f.input :speciality, label: 'Stroke specialism',collection: ["Freestyle", "Breastroke", "Backstroke", "Butterfly"], prompt: "Select your best swim stroke" %>
+          <%= f.input :price, label: 'Price per hour (£GBP)', placeholder: 'e.g. 25' %>
+          <%= f.input :bio, label: 'About you', placeholder: 'Tell prospective clients about yourself - your coaching history, specialisms, achievements, etc.'%>
+          <%= f.submit "Create", class: "btn btn-primary center-block" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
