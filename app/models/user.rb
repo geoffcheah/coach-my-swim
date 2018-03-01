@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   # TO DO: VALIDATIONS
   has_many :bookings
+  has_one :lesson
   validates :email, uniqueness: true, presence: true
 end

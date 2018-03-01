@@ -3,15 +3,13 @@
 <!--     The link to become a coach needs to be modified when this user journey is finalised and the use case of become a coach -->
   <% if user_signed_in? %>
     <div class="navbar-swim-right">
-      <%= link_to "Become a coach", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
+      <% if !current_user.coach %>
+        <%= link_to "Become a coach", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
+      <% end %>
       <%= link_to "Log-out", destroy_user_session_path, method: :delete, class: "navbar-swim-link navbar-swim-item"%>
 <!--   The user name needs to be update to an avatar and the root to their adiministion page -->
       <%= link_to user_path(current_user) do %>
-        <% if current_user.photo == nil %>
-          <%= cl_image_tag("profile_default", class: 'avatar') %>
-        <% else %>
-          <%= cl_image_tag("current_user.photo", class: 'avatar') %>
-          <% end %>
+         <%= cl_image_tag current_user.photo, class: "avatar" %>
       <% end %>
     </div>
 <!--     <%= link_to current_user.email, root_path, class: "navbar-swim-link navbar-swim-item" %> -->
