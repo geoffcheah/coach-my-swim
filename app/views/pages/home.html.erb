@@ -2,12 +2,14 @@
   <div class="banner-content"">
     <h1>Coach My Swim</h1>
     <h2>Remote Swim Technique Coaching</h2>
-    <%# link_to middle_path do  %>
-      <h3 class="btn btn-success"><%= link_to "Browse Coaches", lessons_path %></h3>
-    <%# end %>
+      <h3 class="btn btn-success btn-lg"><%= link_to "Browse Coaches", lessons_path %></h3>
+    <div class="bottom">
+      <a href="#How it works"><i class="fas fa-angle-double-down"></i></a>
+    </div>
   </div>
 </div>
-<div class="green-wrapper">
+<a name="How it works">
+<div class="wrapper">
   <div class="container">
     <div class="row">
       <h3 class="text-center">How it works</h3>
@@ -16,7 +18,7 @@
           <div class="avatar-large" style="background-image: url('https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?ixlib=rb-0.3.5&s=a47dd2ce1058afa4959370155ac00c48&auto=format&fit=crop&w=2534&q=80');">
           </div>
           <div class="home-card-title">
-            <h4>FIND</h4>
+            <h4>Find</h4>
           </div>
           <div class="home-card-description">
             <p>Placeholder text about how awesome our product is...</p>
@@ -28,7 +30,7 @@
           <div class="avatar-large" style="background-image: url('https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?ixlib=rb-0.3.5&s=a47dd2ce1058afa4959370155ac00c48&auto=format&fit=crop&w=2534&q=80');">
           </div>
           <div class="home-card-title">
-            <h4>HIRE</h4>
+            <h4>Hire</h4>
           </div>
           <div class="home-card-description">
             <p>Placeholder text about how awesome our product is...</p>
@@ -40,7 +42,7 @@
           <div class="avatar-large" style="background-image: url('https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?ixlib=rb-0.3.5&s=a47dd2ce1058afa4959370155ac00c48&auto=format&fit=crop&w=2534&q=80');">
           </div>
           <div class="home-card-title">
-            <h4>GET COACHED</h4>
+            <h4>Get coached</h4>
           </div>
           <div class="home-card-description">
             <p>Placeholder text about how awesome our product is...</p>
@@ -52,7 +54,7 @@
           <div class="avatar-large" style="background-image: url('https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?ixlib=rb-0.3.5&s=a47dd2ce1058afa4959370155ac00c48&auto=format&fit=crop&w=2534&q=80');">
           </div>
           <div class="home-card-title">
-            <h4>IMPROVE</h4>
+            <h4>Improve</h4>
           </div>
           <div class="home-card-description">
             <p>Placeholder text about how awesome our product is...</p>
@@ -64,7 +66,7 @@
 </div>
 <div class="light-green-wrapper">
   <div class="container">
-    <h3 class="text-center">Some of our top coaches</h3>
+    <h3 class="text-center title-padded">Some of our top coaches</h3>
     <div class="row">
       <% @lessons.each do |lesson| %>
         <%= link_to lesson_path(lesson) do  %>

@@ -1,7 +1,6 @@
-<div class="navbar-swim-blue">
+<div class="navbar-fixed-top navbar-swim">
   <%= link_to "CoachMySwim", root_path, class: "navbar-swim-link" %>
   <div class="navbar-swim-right">
-    <%= link_to "View Coaches", lessons_path, class: "navbar-swim-link" %>
     <% if user_signed_in? %>
       <div class="navbar-swim-item">
         <div class="dropdown">
