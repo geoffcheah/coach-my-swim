@@ -51,7 +51,7 @@
 /* Navbar link */
 .navbar-swim-link {
   color: $white;
-  font-size: 20px;
+  font-size: 18px;
 }
 .navbar-swim-link:hover {
   color: $green;
@@ -93,6 +93,17 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.logo-block {
+  p {
+    display: inline;
+  }
 }
 
 // .navbar-wagon {

@@ -1,5 +1,10 @@
 <div class="navbar-fixed-top navbar-swim">
-  <%= link_to "CoachMySwim", root_path, class: "navbar-swim-link" %>
+  <%= link_to root_path do %>
+    <div class="logo-block navbar-swim-link">
+      <%= image_tag "logo.svg", class: "logo" %>
+      <p> Coach My Swim </p>
+    </div>
+  <% end %>
   <div class="navbar-swim-right">
     <% if user_signed_in? %>
       <div class="navbar-swim-item">
