@@ -4,7 +4,7 @@
       <%= cl_image_tag(@user.photo.url(:bright_face), class: 'avatar-small') %>
       <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
       <%= link_to edit_user_path(@user) do %>
-        <div class="btn btn-primary">Edit Profile</div>
+        <div id="btn-edit-profile" class="btn btn-primary">Edit Profile</div>
       <% end %>
     </div>
 
