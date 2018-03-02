@@ -1,31 +1,31 @@
 <h2>Your Feedback Requests</h2>
-  <% if current_user.coach == true %>
-    <% if @user.lesson.bookings == [] %>
-      <p>You currently have no feedback requests!</p>
-    <% else %>
-      <% @user.lesson.bookings.each do |booking| %>
-        <%= link_to booking_path(booking.id) do %>
-          <div class="booking-container">
-            <%= cl_image_tag(booking.user.photo, class: 'avatar-small') %>
-            <div class="booking-message">
-              <h2><%= booking.user.first_name %></h2>
-              <p>Their request:</p>
-              <p class="booking-description"> <%= booking.description.truncate(30, separator: /\s/) %></p>
-            </div>
-            <div class="booking-status">
-              <% if booking.feedback == nil %>
-                <p>Leave Feedback</p>
-              <% else %>
-                <p>Feedback Sent</p>
-              <% end %>
-            </div>
+<% if current_user.coach == true %>
+  <% if @user.lesson.bookings == [] %>
+    <p>You currently have no feedback requests!</p>
+  <% else %>
+    <% @user.lesson.bookings.each do |booking| %>
+      <%= link_to booking_path(booking.id) do %>
+        <div class="booking-container">
+          <%= cl_image_tag(booking.user.photo, class: 'avatar-small') %>
+          <div class="booking-message">
+            <h4><%= booking.user.first_name %></h4>
+            <p>Their request:</p>
+            <p class="booking-description"> <%= booking.description.truncate(30, separator: /\s/) %></p>
           </div>
-        <% end %>
+          <div class="booking-status">
+            <% if booking.feedback == nil %>
+              <p>Leave Feedback</p>
+            <% else %>
+              <p>Feedback Sent</p>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     <% end %>
-  <% else %>
-    <p>Top of your game? Become a coach and get paid to give advice</p>
-    <%= link_to new_lesson_path do %>
-      <div class="btn btn-primary">Become a Coach</div>
-    <% end %>
   <% end %>
+<% else %>
+  <p>Top of your game? Become a coach and get paid to give advice</p>
+  <%= link_to new_lesson_path do %>
+    <div class="btn btn-primary">Become a Coach</div>
+  <% end %>
+<% end %>

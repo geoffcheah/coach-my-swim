@@ -4,12 +4,12 @@
   justify-items: space-between;
   box-shadow: 0px 0px 1px 0px  rgba(173,254,201,1);
   // border: 1px solid $light-green;
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: white;
-  margin: 10px 0px;
+  margin: 20px 0px;
   padding: 10px;
   &:hover {
-    background-color: #ADFEC9;
+    background-color: $light-green;
     a {
     text-decoration: none;
     }
@@ -18,10 +18,12 @@
 
 .booking-message {
   flex: 1 0 auto;
+  padding: 10px;
 }
 
 .booking-status {
   width: 100px;
+  text-align: center;
 }
 
 .booking-description {

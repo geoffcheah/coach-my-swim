@@ -7,17 +7,12 @@
     </div>
   <% end %>
 <% else %>
-  <%= link_to lessons_path do %>
-    <div class="btn btn-primary">
-    Browse All Coaches
-    </div>
-  <% end %>
   <% @user.bookings.each do |booking| %>
     <%= link_to booking_path(booking.id) do %>
       <div class="booking-container">
         <%= cl_image_tag(booking.lesson.user.photo, class: 'avatar-small') %>
         <div class="booking-message">
-          <h2><%= booking.lesson.user.first_name %></h2>
+          <h4><%= booking.lesson.user.first_name %></h4>
           <p>Your request:</p>
           <p class="booking-description"><%= booking.description.truncate(30, separator: /\s/) %></p>
         </div>
@@ -30,5 +25,10 @@
         </div>
       </div>
     <% end %>
+  <% end %>
+   <%= link_to lessons_path do %>
+    <div class="btn btn-primary">
+    Browse All Coaches
+    </div>
   <% end %>
 <% end %>
