@@ -1,4 +1,4 @@
-<div class="navbar-fixed-top navbar-swim-blue">
+<div class="navbar-fixed-top navbar-swim">
   <%= link_to root_path do %>
     <div class="logo-block navbar-swim-link">
       <%= image_tag "logo.svg", class: "logo" %>
@@ -6,7 +6,6 @@
     </div>
   <% end %>
   <div class="navbar-swim-right">
-    <%= link_to "View Coaches", lessons_path, class: "navbar-swim-link" %>
     <% if user_signed_in? %>
       <div class="navbar-swim-item">
         <div class="dropdown">
@@ -14,7 +13,7 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-swim-dropdown-menu">
             <% if !current_user.coach %>
               <li><%= link_to "Dashboard", user_path(current_user), class: "navbar-swim-link navbar-swim-item" %></li>
-              <li><%= link_to "Become a Coach", new_lesson_path, class: "navbar-swim-link navbar-swim-item" %></li>
+              <li><%= link_to "Become a coach", new_lesson_path, class: "navbar-swim-link navbar-swim-item" %></li>
               <li> <%= link_to "Log-out", destroy_user_session_path, method: :delete, class: "navbar-swim-link navbar-swim-item"%></li>
             <% else %>
               <li><%= link_to "Dashboard", user_path(current_user), class: "navbar-swim-link navbar-swim-item" %></li>
@@ -24,14 +23,9 @@
         </div>
       </div>
     <% else %>
-      <%= link_to "Become a Coach", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
+      <%= link_to "Become a coach", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
       <%= link_to "Sign-up", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
       <%= link_to "Log-in", new_user_session_path, class: "navbar-swim-link navbar-swim-item" %>
-      <%= link_to "Login", "#login", "data-toggle" => "modal", :class => 'btn btn-small btn-warning' %>
-      <%= link_to "Sign up", "#new", "data-toggle" => "modal", :class => 'btn btn-small btn-success' %>
-      <%= render "devise/registrations/new" %>
-      <%= render "devise/sessions/new" %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-

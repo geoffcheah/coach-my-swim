@@ -1,4 +1,27 @@
 .profile-header {
   display: flex;
   align-items: center;
+  padding: 10px 0px;
+  // margin-top: 20px;
+  border-bottom: 1px solid $light-green;
+  #btn-edit-profile {
+    margin-left: 30px;
+    margin-top: 15px;
+  }
+  #user-name {
+    margin-left: 20px;
+  }
+}
+
+.feedback-booked-headers-box {
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.wrapper {
+  background-color: #F7F7FF;
+}
+.container {
+  padding: 20px;
 }

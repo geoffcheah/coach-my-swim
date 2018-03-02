@@ -1,9 +1,9 @@
-<h2>Coaches you have booked</h2>
+<h2>Coaches You Have Booked</h2>
 <% if @user.bookings == [] %>
   <p>You currently have no bookings!</p>
   <%= link_to lessons_path do %>
     <div class="btn btn-primary">
-    Browse all coaches
+    Browse All Coaches
     </div>
   <% end %>
 <% else %>
@@ -12,18 +12,23 @@
       <div class="booking-container">
         <%= cl_image_tag(booking.lesson.user.photo, class: 'avatar-small') %>
         <div class="booking-message">
-          <h2><%= booking.lesson.user.first_name %></h2>
+          <h4><%= booking.lesson.user.first_name %></h4>
           <p>Your request:</p>
-          <p> <%= booking.description %></p>
+          <p class="booking-description"><%= booking.description.truncate(30, separator: /\s/) %></p>
         </div>
         <div class="booking-status">
           <% if booking.feedback == nil %>
             <p>Pending</p>
           <% else %>
-            <p>Feedback ready</p>
+            <p>Feedback Ready</p>
           <% end %>
         </div>
       </div>
     <% end %>
+  <% end %>
+   <%= link_to lessons_path do %>
+    <div class="btn btn-primary">
+    Browse All Coaches
+    </div>
   <% end %>
 <% end %>
