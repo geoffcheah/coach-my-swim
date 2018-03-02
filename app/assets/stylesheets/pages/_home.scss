@@ -1,28 +1,40 @@
 // Specific CSS for your home-page
 .home-card {
   height: 350px;
-  margin: 10px 0px;
+  margin: 30px 0px 60px 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
 }
+
+.home-card .avatar-large {
+  display: block;
+  padding: 10px;
+}
+
 .home-card-title {
   position: absolute;
   top: 0px;
   align-items: center;
   h4 {
     text-align: center;
-    font-size: 20px;
-    color: $lightest-green;
+    font-size: 24px;
+    color: $blue;
+    display: block;
   }
 }
 .home-card-description {
   position: absolute;
+  display: block;
   top: 300px;
   p {
     text-align: center;
-    font-size: 15px;
-    color: $lightest-green;
+    font-size: 18px;
+    color: $blue;
   }
+}
+
+.title-padded {
+  padding-bottom: 40px;
 }
