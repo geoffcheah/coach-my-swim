@@ -1,9 +1,11 @@
-<div class="container">
-  <%= simple_form_for(@lesson) do |f| %>
-    <%= f.input :ability %>
-    <%= f.input :speciality %>
-    <%= f.input :price %>
-    <%= f.input :bio %>
-    <%= f.submit %>
-  <% end %>
+<div class="wrapper">
+  <div class="container">
+    <%= simple_form_for(@lesson) do |f| %>
+      <%= f.input :ability %>
+      <%= f.input :speciality %>
+      <%= f.input :price %>
+      <%= f.input :bio %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
