@@ -6,7 +6,7 @@
     <% @user.lesson.bookings.each do |booking| %>
       <%= link_to booking_path(booking.id) do %>
         <div class="booking-container">
-          <%= cl_image_tag(booking.user.photo, class: 'avatar-small') %>
+          <%= cl_image_tag(booking.user.photo.url(:bright_face), class: 'avatar-small') %>
           <div class="booking-message">
             <h4><%= booking.user.first_name %></h4>
             <p>Their request:</p>
