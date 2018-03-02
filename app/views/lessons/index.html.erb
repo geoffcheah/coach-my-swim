@@ -1,34 +1,36 @@
-<div class="container">
-  <h1>Search Coaches</h1>
-  <div class="search-form">
-    <%= form_tag lessons_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a coach"
-      %>
-    <% end %>
-  </div>
-  <div class="row">
-    <% @lessons.each do |lesson| %>
-      <div class="col-xs-12 col-sm-4 col-md-3">
-        <%= link_to lesson_path(lesson) do  %>
-          <div class="card">
-            <div class="card-user-img" style="background-image: url(<%= cl_image_path lesson.user.photo %>)">
+<div class="wrapper">
+  <div class="container">
+    <h1>Search Coaches</h1>
+    <div class="search-form">
+      <%= form_tag lessons_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a coach"
+        %>
+      <% end %>
+    </div>
+    <div class="row">
+      <% @lessons.each do |lesson| %>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <%= link_to lesson_path(lesson) do  %>
+            <div class="card">
+              <div class="card-user-img" style="background-image: url(<%= cl_image_path lesson.user.photo %>)">
+              </div>
+              <div class="card-user-name"><h2><%= lesson.user.first_name %> <%= lesson.user.last_name %></h2>
+              </div>
+              <div class="card-user-description">
+                <p>
+                <% 4.times do %><i class="glyphicon glyphicon-star"></i><% end %>
+                </p>
+                <p>
+                  <%= lesson.speciality %> | <%= lesson.ability %> | £<%= lesson.price %>
+                </p>
+              </div>
             </div>
-            <div class="card-user-name"><h2><%= lesson.user.first_name %> <%= lesson.user.last_name %></h2>
-            </div>
-            <div class="card-user-description">
-              <p>
-              <% 4.times do %><i class="glyphicon glyphicon-star"></i><% end %>
-              </p>
-              <p>
-                <%= lesson.speciality %> | <%= lesson.ability %> | £<%= lesson.price %>
-              </p>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
