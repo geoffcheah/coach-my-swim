@@ -1,18 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2">
-      <div class="box-new-review">
-        <h1>Write a Review for <%= @lesson.user.first_name %></h1>
-        <%= cl_image_tag @lesson.user.photo, class: "avatar-large" %>
-        <%= simple_form_for [@lesson, @review] do |f| %>
-          <%= f.input :content, placeholder: "Did you improve? Attention to detail? Helpful? etc."%>
-          <%= f.input :rating, collection: 1..5 %>
-          <%= f.button :submit, class: "btn btn-success" %>
-        <% end %>
-        <hr>
-        <%= link_to lesson_path(@lesson) do %>
-          <div class="btn btn-primary">Back to <%= @lesson.user.first_name %></div>
-        <% end %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2">
+        <div class="box-new-review">
+          <h1>Write a Review for <%= @lesson.user.first_name %></h1>
+          <%= cl_image_tag @lesson.user.photo, class: "avatar-large" %>
+          <%= simple_form_for [@lesson, @review] do |f| %>
+            <%= f.input :content, placeholder: "Did you improve? Attention to detail? Helpful? etc."%>
+            <%= f.input :rating, collection: 1..5 %>
+            <%= f.button :submit, class: "btn btn-success" %>
+          <% end %>
+          <hr>
+          <%= link_to lesson_path(@lesson) do %>
+            <div class="btn btn-primary">Back to <%= @lesson.user.first_name %></div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

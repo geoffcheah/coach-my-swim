@@ -1,13 +1,14 @@
+<div class="wrapper">
+  <div class="container">
 
-<div class="container">
+    <h1>Ask <%= @lesson.user.first_name %> for some feedback </h1>
+    <p>You can provide <%= @lesson.user.first_name %> with a description of what you are looking to get out of the fedback. <%= @lesson.user.first_name %> will be notfied of your request when you click send.</p>
+    <%= simple_form_for [@lesson, @booking] do |f| %>
+      <%= f.input :description %>
+      <%= f.file_field :video, class: "form-control" %>
+      <%= f.submit "Get some feedback", class: "btn btn-primary" %>
+    <% end %>
 
-  <h1>Ask <%= @lesson.user.first_name %> for some feedback </h1>
-  <p>You can provide <%= @lesson.user.first_name %> with a description of what you are looking to get out of the fedback. <%= @lesson.user.first_name %> will be notfied of your request when you click send.</p>
-  <%= simple_form_for [@lesson, @booking] do |f| %>
-    <%= f.input :description %>
-    <%= f.file_field :video, class: "form-control" %>
-    <%= f.submit "Get some feedback", class: "btn" %>
-  <% end %>
-
+  </div>
 </div>
 
