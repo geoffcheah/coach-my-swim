@@ -1,9 +1,9 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700|Patua+One|Montserrat:400,600i");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700|Patua+One");
 
 // Define fonts for body and headers
 $body-font: "Lora", "Helvetica", "serif";
-$headers-font: 'Patua One', sans-serif;
+$headers-font: 'Patua One', "Helvetica", "serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
