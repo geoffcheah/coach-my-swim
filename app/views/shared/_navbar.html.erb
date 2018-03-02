@@ -25,13 +25,12 @@
       </div>
     <% else %>
       <%= link_to "Become a Coach", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
-      <%= link_to "Sign-up", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
-      <%= link_to "Log-in", new_user_session_path, class: "navbar-swim-link navbar-swim-item" %>
-      <%= link_to "Login", "#login", "data-toggle" => "modal", :class => 'btn btn-small btn-warning' %>
-      <%= link_to "Sign up", "#new", "data-toggle" => "modal", :class => 'btn btn-small btn-success' %>
+      <%= link_to "Log-in", "#login", "data-toggle" => "modal", :class => 'navbar-swim-link navbar-swim-item' %>
+      <%= link_to "Sign up", "#new", "data-toggle" => "modal", :class => 'navbar-swim-link navbar-swim-item' %>
+    </div>
+    <% end %>
+  </div>
+</div>
       <%= render "devise/registrations/new" %>
       <%= render "devise/sessions/new" %>
-    </div>
-  <% end %>
-</div>
 
