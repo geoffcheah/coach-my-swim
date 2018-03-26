@@ -24,7 +24,7 @@
         </div>
       </div>
     <% else %>
-      <%= link_to "Become a Coach", new_user_registration_path, class: "navbar-swim-link navbar-swim-item" %>
+      <%= link_to "Become a Coach", "#login", "data-toggle" => "modal", :class => 'navbar-swim-link navbar-swim-item' %>
       <%= link_to "Log-in", "#login", "data-toggle" => "modal", :class => 'navbar-swim-link navbar-swim-item' %>
       <%= link_to "Sign up", "#new", "data-toggle" => "modal", :class => 'navbar-swim-link navbar-swim-item' %>
     </div>
